@@ -1,0 +1,21 @@
+
+<h1>Task Info</h1>
+
+<h3>  <%= @task.title %> </h3>
+<p>  <%= @task.details %> </p>
+<p><%if @task.completed %>
+       <%= "[x] You completed this task " %>
+      <% else %>
+        <%= "[_] You need to complete this taks " %>
+      <% end %></p>
+
+<div class = "btn btn-default"> <%= link_to 'Back to list', tasks_path %></div>
+<div class = "btn btn-default"> <%= link_to 'Edit', edit_path %></div>
+<div class = "btn btn-default"> <%= link_to "Delete", delete_path,
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></div>
+
+
+<!-- <div class = "btn btn-default">
+  # <%= link_to "Mark as completed, done_path, method: :patch"%>
+  </div> -->

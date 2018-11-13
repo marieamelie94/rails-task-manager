@@ -1,0 +1,14 @@
+
+<h1>List of tasks</h1>
+
+<ul class="list-unstyled">
+  <% @index.each do |task| %>
+    <li> <%if task.completed %>
+        <%= "[x]" %>
+      <% else %>
+        <%= "[_]" %>
+      <% end %>
+      <%= link_to "#{task.title}", task_path(task) %></li>
+  <% end %>
+</ul>
+
